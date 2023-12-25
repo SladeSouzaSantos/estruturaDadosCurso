@@ -3,9 +3,7 @@ import numpy as np
 
 class VetorNaoOrdenado(vetor.Vetor):
   def __init__(self, capacidade):
-    self.capacidade = capacidade
-    self.ultima_posicao = -1
-    self.valores = np.empty(self.capacidade, dtype=int)
+    super().__init__(capacidade)
 
   # O(1) - O(2)
   def insere(self, valor):

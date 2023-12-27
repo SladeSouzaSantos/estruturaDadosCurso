@@ -54,8 +54,7 @@ class ListaEncadeadaDuplaExtremidade(ListaEncadeadaSimples):
             self.primeiro = self.primeiro.proximo        
         else:
             anterior.proximo = atual.proximo
-
-        if atual == self.ultimo:
-            self.ultimo = anterior
+            if atual == self.ultimo:
+                self.ultimo = anterior
         
         return atual

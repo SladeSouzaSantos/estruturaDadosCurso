@@ -10,7 +10,6 @@ class ListaEncadeadaDuplaExtremidade(ListaEncadeadaSimples):
     def insere_inicio(self, valor, tipoNo = No):
         '''override'''
         if tipoNo == NoDuplamenteEncadeada:
-            print("entrou aqui?")
             novo = NoDuplamenteEncadeada(valor)
         else:
             novo = No(valor)
@@ -55,12 +54,14 @@ class ListaEncadeadaDuplaExtremidade(ListaEncadeadaSimples):
     
     def excluir_final(self):
         temp = self.ultimo
-        if hasattr(temp, 'anterior'):            
+        if hasattr(temp, 'anterior'):         
             if self.primeiro.proximo == None:
                 self.primeiro = None
             else:
                 self.ultimo.anterior.proximo = None
-                self.ultimo = self.ultimo.anterior
+            
+            self.ultimo = self.ultimo.anterior
+            self.ultimo.mostrar_encadeamento()
             return temp
         else:
             print("Função aplicada somente ao exemplo de No Duplamente Encadeada.")
@@ -72,25 +73,41 @@ class ListaEncadeadaDuplaExtremidade(ListaEncadeadaSimples):
             return None
         
         atual = self.primeiro
-        anterior = self.primeiro
-        while atual.valor != valor:
-            if atual.proximo == None:
-                return None
-            else:
-                anterior = atual
+                
+        if hasattr(atual, 'anterior'):        
+            while atual.valor != valor:
                 atual = atual.proximo
-        
-        
-        if atual == self.primeiro:
+                if atual == None:
+                    return None
+            if atual == self.primeiro:
+                self.primeiro = atual.proximo
+            else:
+                atual.anterior.proximo = atual.proximo
+            
             if atual == self.ultimo:
-                self.ultimo = self.primeiro.proximo           
-            self.primeiro = self.primeiro.proximo        
+                self.ultimo = atual.anterior
+            else:
+                atual.proximo.anterior = atual.anterior
+        
         else:
-            anterior.proximo = atual.proximo
-            if hasattr(anterior, 'anterior'):
-                anterior.anterior = atual.anterior
-            if atual == self.ultimo:
-                self.ultimo = anterior
+            anterior = self.primeiro
+            while atual.valor != valor:
+                if atual.proximo == None:
+                    return None
+                else:
+                    anterior = atual
+                    atual = atual.proximo
+                        
+            if atual == self.primeiro:
+                if atual == self.ultimo:
+                    self.ultimo = self.primeiro.proximo           
+                self.primeiro = self.primeiro.proximo        
+            else:
+                anterior.proximo = atual.proximo
+                if hasattr(anterior, 'anterior'):
+                    anterior.anterior = atual.anterior
+                if atual == self.ultimo:
+                    self.ultimo = anterior
         
         return atual
     

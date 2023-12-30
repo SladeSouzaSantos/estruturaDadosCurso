@@ -90,13 +90,15 @@ def exemploListaEncadeadaDuplaExtremidadeComNoDuplamenteEncadeado():
   list.mostrar_tras()
   print("Continuar!!!")
   list.excluir_posicao(4)
-  list.excluir_posicao(2)
+  list.mostrar()
+  print(list.primeiro, list.ultimo)
+  list.excluir_final()
   list.mostrar()
   print(list.primeiro, list.ultimo)
   list.excluir_posicao(1)
   list.mostrar()
-  print(list.primeiro, list.ultimo)
   list.excluir_inicio()
+  list.mostrar()
   list.excluir_posicao(1)
   
 def exemploListaEncadeadaDuplaExtremidade():

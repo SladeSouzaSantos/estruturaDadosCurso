@@ -104,8 +104,6 @@ class ListaEncadeadaDuplaExtremidade(ListaEncadeadaSimples):
                 self.primeiro = self.primeiro.proximo        
             else:
                 anterior.proximo = atual.proximo
-                if hasattr(anterior, 'anterior'):
-                    anterior.anterior = atual.anterior
                 if atual == self.ultimo:
                     self.ultimo = anterior
         

@@ -1,4 +1,5 @@
 import numpy as np
+from quick_sort import QuickSort
 from merge_sort import MergeSort
 from shell_sort import ShellSort
 from insertion_sort import InsertionSort
@@ -12,3 +13,4 @@ print("Vetor Ordenado (Selection Sort):", SelectionSort.selection_sort(np.array(
 print("Vetor Ordenado (Insertion Sort):", InsertionSort.insertion_sort(np.array(vetor)))
 print("Vetor Ordenado (Shell Sort):", ShellSort.shell_sort(np.array(vetor)))
 print("Vetor Ordenado (Merge Sort):", MergeSort.merge_sort(np.array(vetor)))
+print("Vetor Ordenado (Quick Sort):", QuickSort.quick_sort(np.array(vetor), 0, len(vetor) - 1))

@@ -1,4 +1,4 @@
-class ShellSort():
+class ShellSort:
     def shell_sort(vetor):
         intervalo = len(vetor) // 2
 

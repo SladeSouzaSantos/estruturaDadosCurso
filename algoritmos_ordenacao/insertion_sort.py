@@ -1,4 +1,4 @@
-class InsertionSort():
+class InsertionSort:
     def insertion_sort(vetor):
         n = len(vetor)
 

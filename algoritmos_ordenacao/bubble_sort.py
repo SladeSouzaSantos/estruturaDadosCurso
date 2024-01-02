@@ -1,4 +1,4 @@
-class BubbleSort():
+class BubbleSort:
 
   def bubble_sort(vetor):
     n = len(vetor)

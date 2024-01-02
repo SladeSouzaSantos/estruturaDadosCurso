@@ -1,4 +1,4 @@
-class SelectionSort():
+class SelectionSort:
 
     def selection_sort(vetor):
         n = len(vetor)

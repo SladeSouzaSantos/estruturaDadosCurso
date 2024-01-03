@@ -1,6 +1,12 @@
 class QuickSort:
     
-    def particao(vetor, inicio, final):
+    def __init__(self, vetor):
+        self.__vetorResult = QuickSort.__quick_sort(vetor, 0, len(vetor) - 1)
+    
+    def getVetor(self):
+        return self.__vetorResult
+    
+    def __particao(vetor, inicio, final):
         pivo = vetor[final]
         i = inicio - 1
 
@@ -11,11 +17,11 @@ class QuickSort:
         vetor[i + 1], vetor[final] = vetor[final], vetor[i + 1]
         return i + 1
 
-    def quick_sort(vetor, inicio, final):
+    def __quick_sort(vetor, inicio, final):
         if inicio < final:
-            posicao = QuickSort.particao(vetor, inicio, final)
+            posicao = QuickSort.__particao(vetor, inicio, final)
             # Esquerda
-            QuickSort.quick_sort(vetor, inicio, posicao - 1)
+            QuickSort.__quick_sort(vetor, inicio, posicao - 1)
             # Direito
-            QuickSort.quick_sort(vetor, posicao + 1, final)
+            QuickSort.__quick_sort(vetor, posicao + 1, final)
         return vetor

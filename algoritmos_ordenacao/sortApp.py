@@ -8,9 +8,10 @@ from selection_sort import SelectionSort
 
 vetor = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 print("Vetor Desordenado:", vetor)
+
 print("Vetor Ordenado (Bubble Sort):", BubbleSort.bubble_sort(np.array(vetor)))
 print("Vetor Ordenado (Selection Sort):", SelectionSort.selection_sort(np.array(vetor)))
 print("Vetor Ordenado (Insertion Sort):", InsertionSort.insertion_sort(np.array(vetor)))
 print("Vetor Ordenado (Shell Sort):", ShellSort.shell_sort(np.array(vetor)))
 print("Vetor Ordenado (Merge Sort):", MergeSort.merge_sort(np.array(vetor)))
-print("Vetor Ordenado (Quick Sort):", QuickSort.quick_sort(np.array(vetor), 0, len(vetor) - 1))
+print("Vetor Ordenado (Quick Sort):", QuickSort(np.array(vetor)).getVetor())

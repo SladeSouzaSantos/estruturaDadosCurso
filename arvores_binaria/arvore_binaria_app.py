@@ -48,3 +48,7 @@ arvore.excluir(53)
 
 print(arvore.ligacoes)
 arvore.pos_ordem(arvore.raiz)
+
+arvore.excluir(30)
+
+print(arvore.ligacoes)
